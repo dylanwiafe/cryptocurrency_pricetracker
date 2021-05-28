@@ -6,6 +6,7 @@ import Coin from "./Coin";
 
 function App() {
   const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState([""]);
 
   useEffect(() => {
     axios
@@ -46,6 +47,7 @@ function App() {
           symbol={coin.symbol}
           volume={coin.market_cap}
           price={coin.current_price}
+          priceChange={coin.price__change__percentage__24j}
         />;
       })}
     </div>
