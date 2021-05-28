@@ -39,7 +39,7 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-@include tablet {
+@include tablet() {
   .container {
     width: 720px;
     padding-right: 24px;
@@ -142,7 +142,7 @@ body {
   }
 }
 
-@include desktop {
+@include desktop() {
   .col-lg-1 {
     width: 68px;
   }
