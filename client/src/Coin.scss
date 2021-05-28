@@ -1,0 +1,61 @@
+@use './partials/partial' as *;
+
+.coin {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #d7d7d7;
+  width: 900px;
+  &__coin-image-name-symbol {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    min-width: 300px;
+  }
+  &__name {
+    font-size: 16px;
+    width: 150px;
+  }
+  &__image {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+  &__symbol {
+    text-transform: uppercase;
+  }
+  &__data {
+    display: flex;
+    text-align: right;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__price {
+    width: 110px;
+  }
+  &__volume {
+    width: 155px;
+  }
+  &__marketcap {
+    width: 230px;
+  }
+  &__percent {
+    width: 100px;
+  }
+  &__percent-red {
+    color: #f00606;
+  }
+  &__percent__green {
+    color: #11d811;
+  }
+}
+
+// .coin__row {
+//   display: flex;
+//   @include tabwidth {
+//     margin: auto;
+//     padding-right: 15rem;
+//   }
+// }

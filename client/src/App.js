@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Coin from "./Coin";
@@ -31,32 +31,34 @@ function App() {
   });
 
   return (
-    <div className="coin">
-      <div className="coin__search">
-        <h1 className="coin__text">Search a currency</h1>
-        <form>
-          <input
-            type="text"
-            placeholder="Search a Currency"
-            className="coin__input"
-            onChange={handleChange}
-          />
-        </form>
+    <div className="container">
+      <div className="coins">
+        <div className="coins__search">
+          <h1 className="coins__text">Search a currency</h1>
+          <form>
+            <input
+              type="text"
+              placeholder="Search a Currency"
+              className="coin__input"
+              onChange={handleChange}
+            />
+          </form>
+        </div>
+        {filteredCoins.map((coin) => {
+          console.log(coin);
+          return (
+            <Coin
+              key={coin.id}
+              name={coin.name}
+              image={coin.image}
+              symbol={coin.symbol}
+              volume={coin.market_cap}
+              price={coin.current_price}
+              priceChange={coin.price_change_percentage_24h}
+            />
+          );
+        })}
       </div>
-      {filteredCoins.map((coin) => {
-        console.log(coin);
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            image={coin.image}
-            symbol={coin.symbol}
-            volume={coin.market_cap}
-            price={coin.current_price}
-            priceChange={coin.price_change_percentage_24h}
-          />
-        );
-      })}
     </div>
   );
 }
